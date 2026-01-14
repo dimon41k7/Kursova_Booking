@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21DF008D-DFAD-4D64-8398-0B9C0D059BCA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Hotel_booking</RootNamespace>
+    <AssemblyName>Hotel_booking</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=8.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.8.0.1\lib\net462\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=8.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.8.0.1\lib\net462\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.8.0.2\lib\net462\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.8.0.0\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.DocumentObjectModel, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.6.2.3\lib\net462\MigraDoc.DocumentObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering-gdi, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.6.2.3\lib\net462\MigraDoc.Rendering-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.RtfRendering-gdi, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.6.2.3\lib\net462\MigraDoc.RtfRendering-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.6.2.3\lib\netstandard2.0\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp-gdi, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-GDI.6.2.3\lib\net462\PdfSharp-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.BarCodes, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.6.2.3\lib\netstandard2.0\PdfSharp.BarCodes.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.BarCodes-gdi, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-GDI.6.2.3\lib\net462\PdfSharp.BarCodes-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.6.2.3\lib\netstandard2.0\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting-gdi, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-GDI.6.2.3\lib\net462\PdfSharp.Charting-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Cryptography, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-GDI.6.2.3\lib\net462\PdfSharp.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Quality, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.6.2.3\lib\netstandard2.0\PdfSharp.Quality.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Quality-gdi, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-GDI.6.2.3\lib\net462\PdfSharp.Quality-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Shared, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-GDI.6.2.3\lib\net462\PdfSharp.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Snippets, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.6.2.3\lib\netstandard2.0\PdfSharp.Snippets.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Snippets-gdi, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-GDI.6.2.3\lib\net462\PdfSharp.Snippets-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.System, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-GDI.6.2.3\lib\net462\PdfSharp.System.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.WPFonts, Version=6.2.3.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-GDI.6.2.3\lib\net462\PdfSharp.WPFonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Pkcs, Version=8.0.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Pkcs.8.0.1\lib\net462\System.Security.Cryptography.Pkcs.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddServiceForm.Designer.cs">
+      <DependentUpon>AddServiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingForm2.Designer.cs">
+      <DependentUpon>BookingForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingDetailsForm.Designer.cs">
+      <DependentUpon>BookingDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingFilter.cs" />
+    <Compile Include="BookingFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingFilterForm.Designer.cs">
+      <DependentUpon>BookingFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingInfo.cs" />
+    <Compile Include="BookingStatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingStatisticsForm.Designer.cs">
+      <DependentUpon>BookingStatisticsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryFilterForm.Designer.cs">
+      <DependentUpon>CategoryFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryFilter.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="CreateBookingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateBookingForm.Designer.cs">
+      <DependentUpon>CreateBookingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditBookingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditBookingForm.Designer.cs">
+      <DependentUpon>EditBookingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditBookingRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditBookingRoomForm.Designer.cs">
+      <DependentUpon>EditBookingRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditBookingServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditBookingServiceForm.Designer.cs">
+      <DependentUpon>EditBookingServiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProfileForm.Designer.cs">
+      <DependentUpon>EditProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinishBookingCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinishBookingCreateForm.Designer.cs">
+      <DependentUpon>FinishBookingCreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hotel_bookingDataSet.cs">
+      <DependentUpon>hotel_bookingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="hotel_bookingDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hotel_bookingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ListBookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListBookings.Designer.cs">
+      <DependentUpon>ListBookings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListFreeRoomsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListFreeRoomsForm.Designer.cs">
+      <DependentUpon>ListFreeRoomsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListServicesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListServicesForm.Designer.cs">
+      <DependentUpon>ListServicesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyBookingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyBookingsForm.Designer.cs">
+      <DependentUpon>MyBookingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyPaymentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyPaymentsForm.Designer.cs">
+      <DependentUpon>MyPaymentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentFilter.cs" />
+    <Compile Include="PaymentFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentFilterForm.Designer.cs">
+      <DependentUpon>PaymentFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentForm.Designer.cs">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentStatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentStatisticsForm.Designer.cs">
+      <DependentUpon>PaymentStatisticsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopularCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopularCategory.Designer.cs">
+      <DependentUpon>PopularCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopularService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopularService.Designer.cs">
+      <DependentUpon>PopularService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfileForm.Designer.cs">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForm2.Designer.cs">
+      <DependentUpon>RegisterForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomBookingDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomBookingDetailsForm.Designer.cs">
+      <DependentUpon>RoomBookingDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceBookingDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceBookingDetailsForm.Designer.cs">
+      <DependentUpon>ServiceBookingDetailsForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddServiceForm.resx">
+      <DependentUpon>AddServiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingForm2.resx">
+      <DependentUpon>BookingForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingDetailsForm.resx">
+      <DependentUpon>BookingDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingFilterForm.resx">
+      <DependentUpon>BookingFilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingStatisticsForm.resx">
+      <DependentUpon>BookingStatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryFilterForm.resx">
+      <DependentUpon>CategoryFilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateBookingForm.resx">
+      <DependentUpon>CreateBookingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditBookingForm.resx">
+      <DependentUpon>EditBookingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditBookingRoomForm.resx">
+      <DependentUpon>EditBookingRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditBookingServiceForm.resx">
+      <DependentUpon>EditBookingServiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProfileForm.resx">
+      <DependentUpon>EditProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinishBookingCreateForm.resx">
+      <DependentUpon>FinishBookingCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListBookings.resx">
+      <DependentUpon>ListBookings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListFreeRoomsForm.resx">
+      <DependentUpon>ListFreeRoomsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListServicesForm.resx">
+      <DependentUpon>ListServicesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyBookingsForm.resx">
+      <DependentUpon>MyBookingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyPaymentsForm.resx">
+      <DependentUpon>MyPaymentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentFilterForm.resx">
+      <DependentUpon>PaymentFilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentStatisticsForm.resx">
+      <DependentUpon>PaymentStatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopularCategory.resx">
+      <DependentUpon>PopularCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopularService.resx">
+      <DependentUpon>PopularService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfileForm.resx">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterForm2.resx">
+      <DependentUpon>RegisterForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomBookingDetailsForm.resx">
+      <DependentUpon>RoomBookingDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceBookingDetailsForm.resx">
+      <DependentUpon>ServiceBookingDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="hotel_bookingDataSet.xsc">
+      <DependentUpon>hotel_bookingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="hotel_bookingDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hotel_bookingDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="hotel_bookingDataSet.xss">
+      <DependentUpon>hotel_bookingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
